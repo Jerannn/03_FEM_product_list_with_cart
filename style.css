@@ -1,0 +1,329 @@
+:root {
+  --red: hsl(14, 86%, 42%);
+  --green: hsl(159, 69%, 38%);
+
+  --rose-50: hsl(20, 50%, 98%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  background-color: var(--rose-50);
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.main {
+  width: 60%;
+}
+
+.main__category {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* PRODUCT */
+.main__products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.main__products__image {
+  width: 100%;
+  position: relative;
+}
+
+.main__products__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.main__products__btn {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+
+  border: none;
+  border: 1px solid var(--rose-400);
+  border-radius: 50px;
+  background-color: white;
+  padding: 0.8rem 1.3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.main__products__add-to-cart:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.main__products__counter {
+  background-color: var(--red);
+  color: var(--rose-50);
+  border-color: var(--red);
+  padding: 0.8rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: default;
+  display: none;
+}
+
+.main__products__counter span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__products__counter span:not(.main__products__item-quantity) {
+  cursor: pointer;
+  border: 1px solid var(--rose-50);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.main__products__counter span:not(.main__products__item-quantity):hover {
+  background-color: var(--rose-300);
+}
+
+.main__products__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.2rem;
+  margin: 1.5rem 0;
+}
+
+.main__products__category {
+  font-size: 0.9rem;
+  color: var(--rose-500);
+}
+
+.main__products__name {
+  font-size: 1rem;
+  color: var(--rose-900);
+}
+
+.main__products__price {
+  font-size: 1rem;
+  color: var(--red);
+}
+
+/* SIDEBAR */
+.sidebar {
+  background-color: white;
+  width: 350px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: -0.3px -0.3px 2px rgba(0, 0, 0, 0.1),
+    0.2px 0.2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.main__sidebar__title {
+  color: var(--red);
+  margin-bottom: 1.5rem;
+}
+
+.main__sidebar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--rose-100);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.main__sidebar__item--name {
+  font-weight: 500;
+}
+
+.main__sidebar__quantity {
+  color: var(--red);
+  font-weight: 500;
+  padding-right: 10px;
+}
+
+.main__sidebar__item--description {
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  color: var(--rose-300);
+}
+
+.main__sidebar__total-quantity {
+  color: var(--rose-400);
+  font-weight: 500;
+  padding-left: 7px;
+}
+
+.main__sidebar__removeBtn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: none;
+  border: 1px solid var(--rose-300);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.main__sidebar__removeBtn:hover {
+  border-color: var(--rose-900);
+  filter: brightness(0) saturate(100%) invert(14%) sepia(100%) saturate(40%)
+    hue-rotate(-14deg) brightness(30%) contrast(80%);
+}
+
+.main__sidebar__total-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.main__sidebar__total-price h3 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--rose-900);
+}
+
+.main__sidebar__total-price h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--rose-900);
+}
+
+.main__sidebar__messaage {
+  background-color: var(--rose-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.main__sidebar__messaage img {
+  padding-right: 10px;
+}
+
+.main__sidebar__messaage b {
+  margin: 0 3px;
+}
+
+.main__sidebar__place-order-btn {
+  background-color: var(--red);
+  color: var(--rose-100);
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.main__sidebar__place-order-btn:hover {
+  background-color: var(--rose-500);
+}
+
+/* LOADING SPINNER */
+.lds-ellipsis,
+.lds-ellipsis div {
+  box-sizing: border-box;
+}
+.lds-ellipsis {
+  display: flex;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 50% auto 0 auto;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33.33333px;
+  width: 13.33333px;
+  height: 13.33333px;
+  border-radius: 50%;
+  background: var(--red);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
